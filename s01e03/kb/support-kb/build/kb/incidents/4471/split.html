@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="../../../_app/immutable/entry/start.DJ0ag3i7.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/WgfOfNfE.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DMgiF_3X.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CZomEjWq.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.BQiCpjSa.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DZni_WYU.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/BMv-2JeR.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DQhTBKxc.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DL3LuOT-.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/0.Dqsao82p.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/BRmqMdvF.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/5.aK97i-5Q.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/C-LxcJOb.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CCdwa9zY.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DbG4UGrs.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/iXLSwIXB.js" rel="modulepreload">
+		<!--e2jw2j--><!----><title>#4471 · three problems, not one · support kb</title>
+		<link href="../../../_app/immutable/assets/runbook.BhhgOc_n.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/Callout.yLErXQDM.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/5.DyeWZLt-.css" rel="stylesheet"></head>
+  <body><div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>skligerman</b></span> <span class="status open svelte-e2jw2j">open</span> <span class="svelte-e2jw2j">reviewed 2026-10-29 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> says one issue, one fix. The reports say otherwise. We merged them
+on subject line (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>), and every one of them
+has a subject about a wrong date, so <strong>3</strong><!----> different problems
+went into one ticket. Each now has a ticket of its own.</p> <aside class="warn svelte-17bri61"><!---->The queued parser fix closes <strong>374</strong><!----> reports. It does not touch the <strong>33</strong><!----> from the booking-v3 form or the <strong>5</strong><!----> that moved by one day.<!----></aside><!----> <h2>What #4471 holds</h2> <p class="sum svelte-1op6c6"><strong>427</strong> rows in the export · <strong>412</strong> reports once each · <strong>412</strong> merged into #4471 · <strong>3</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>channels</th><th>tenants</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr><td><code>parser</code><br/><span class="what svelte-1op6c6">the shared parser reads day-first dates month first: day and month swap</span></td><td>374</td><td class="small svelte-1op6c6">app ×202 · email ×147 · form ×25</td><td class="small svelte-1op6c6" title="alder.physio, copper.studio, harbour.dental, kettle.books, lantern.row, long.table, morrow.tax, nine.lanterns, pale.harbour, ridge.clinic, stone.and.sons">11</td><td class="small svelte-1op6c6">2026-04-01 → 2026-10-04</td><td><!--[0--><a href="https://github.com/skligerman/mega/issues/1">#1</a><!--]--></td></tr><tr><td><code>hint</code><br/><span class="what svelte-1op6c6">the booking-v3 form hints MM/DD and reads DD/MM: day and month swap</span></td><td>33</td><td class="small svelte-1op6c6">form ×33</td><td class="small svelte-1op6c6" title="alder.physio, copper.studio, pale.harbour">3</td><td class="small svelte-1op6c6">2026-04-17 → 2026-09-22</td><td><!--[0--><a href="https://github.com/skligerman/mega/issues/2">#2</a><!--]--></td></tr><tr><td><code>shift</code><br/><span class="what svelte-1op6c6">the date moves by one day across time zones: no swap at all</span></td><td>5</td><td class="small svelte-1op6c6">email ×3 · app ×2</td><td class="small svelte-1op6c6" title="alder.physio, kettle.books, lantern.row, nine.lanterns, pale.harbour">5</td><td class="small svelte-1op6c6">2026-04-02 → 2026-10-04</td><td><!--[0--><a href="https://github.com/skligerman/mega/issues/3">#3</a><!--]--></td></tr><!--]--></tbody></table><!----> <h2>How to tell them apart</h2> <p>Not by subject: all three share the same subject lines. Not by intake’s tag: it guesses from
+the reporter’s browser, not from the tenant. Look at the tenant, the way in, and the body.</p> <ul><li><strong><code>parser</code></strong>: a day-first tenant, by app, email or the booking-v2 form. The body names two dates
+with day and month swapped: “8 December is now 12 August”.</li> <li><strong><code>hint</code></strong>: a booking-v3 tenant (alder.physio, copper.studio, pale.harbour), by the form. The
+body looks the same as <code>parser</code>, but the hint under the date field told the person to type month
+first. Fixing the parser leaves this one as it is; the form’s hint or its reading has to change.</li> <li><strong><code>shift</code></strong>: the date moves by one day, or differs between two places: “Client in Lisbon got
+Tuesday. Client in Toronto got Monday.” No month swap explains it. The desk had already noted
+these (desk notes, <code>oneDayMove</code>) and still counted them under <code>parser</code>.</li></ul> <h2>Counting</h2> <p>The export comes in overlapping pages: <strong>427</strong><!----> rows hold</p> <strong>412</strong><!----> reports. Each report is counted once, under one problem. <h2>For the desk</h2> <ul><li>Before you merge into a big ticket, check that the cause matches, not just the subject. The
+explorer on <a href="/kb/triage/dedupe">triage</a> shows the cause for each pair.</li> <li>When a desk note says some reports read differently, give them a ticket of their own, not a footnote.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-4N8H-YCGE</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_9tl0m3 = {
+						base: new URL("../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.DJ0ag3i7.js"),
+						import("../../../_app/immutable/entry/app.BQiCpjSa.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div></body>
+</html>

@@ -1,0 +1,63 @@
+---
+layout: runbook
+title: '#4471 · three problems, not one'
+owner: skligerman
+status: open
+reviewed: 2026-10-29
+signature: Sam Kligerman (skligerman)
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import Count from '#lib/kb/Count.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const tickets = {
+    parser: 'https://github.com/skligerman/mega/issues/1',
+    hint: 'https://github.com/skligerman/mega/issues/2',
+    shift: 'https://github.com/skligerman/mega/issues/3',
+  };
+</script>
+
+[#4471](/kb/incidents/4471) says one issue, one fix. The reports say otherwise. We merged them
+on subject line ([decision 0001](/kb/decisions/0001-dedupe-by-subject)), and every one of them
+has a subject about a wrong date, so <Count ticket={4471} of="problems" /> different problems
+went into one ticket. Each now has a ticket of its own.
+
+<Callout kind="warn">
+The queued parser fix closes <Count ticket={4471} of="parser" /> reports. It does not touch the
+<Count ticket={4471} of="hint" /> from the booking-v3 form or the <Count ticket={4471} of="shift" />
+that moved by one day.
+</Callout>
+
+## What #4471 holds
+
+<ProblemTable ticket={4471} {tickets} />
+
+## How to tell them apart
+
+Not by subject: all three share the same subject lines. Not by intake's tag: it guesses from
+the reporter's browser, not from the tenant. Look at the tenant, the way in, and the body.
+
+- **`parser`**: a day-first tenant, by app, email or the booking-v2 form. The body names two dates
+  with day and month swapped: "8 December is now 12 August".
+- **`hint`**: a booking-v3 tenant (alder.physio, copper.studio, pale.harbour), by the form. The
+  body looks the same as `parser`, but the hint under the date field told the person to type month
+  first. Fixing the parser leaves this one as it is; the form's hint or its reading has to change.
+- **`shift`**: the date moves by one day, or differs between two places: "Client in Lisbon got
+  Tuesday. Client in Toronto got Monday." No month swap explains it. The desk had already noted
+  these (desk notes, `oneDayMove`) and still counted them under `parser`.
+
+## Counting
+
+The export comes in overlapping pages: <Count ticket={4471} of="rows" /> rows hold
+<Count ticket={4471} of="unique" /> reports. Each report is counted once, under one problem.
+
+## For the desk
+
+- Before you merge into a big ticket, check that the cause matches, not just the subject. The
+  explorer on [triage](/kb/triage/dedupe) shows the cause for each pair.
+- When a desk note says some reports read differently, give them a ticket of their own, not a footnote.
+
+<RenderStamp {signature} />
