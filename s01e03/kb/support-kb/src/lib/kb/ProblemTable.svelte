@@ -17,7 +17,7 @@
 <p class="sum">
   <strong>{s.rows}</strong> rows in the export · <strong>{s.unique}</strong> reports once each ·
   <strong>{s.merged}</strong> merged into #{ticket} · <strong>{s.groups.length}</strong>
-  {s.groups.length === 1 ? 'problem' : 'problems'}
+  {s.groups.length === 1 ? 'problem' : 'problems'} · counted where the desk files them
 </p>
 
 <table>
@@ -28,7 +28,7 @@
     {#each s.groups as g (g.problem)}
       <tr>
         <td><code>{g.problem}</code><br /><span class="what">{PROBLEMS[g.problem]}</span></td>
-        <td>{g.reports.length}</td>
+        <td>{g.reports.length}{#if g.filedUnder.length}<br /><span class="small">filed under {g.filedUnder.join(', ')}</span>{/if}</td>
         <td class="small">{channels(g.channels)}</td>
         <td class="small" title={g.tenants.join(', ')}>{g.tenants.length}</td>
         <td class="small">{g.firstSeen} → {g.lastSeen}</td>

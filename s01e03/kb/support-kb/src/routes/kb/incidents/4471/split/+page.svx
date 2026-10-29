@@ -22,13 +22,14 @@ signature: Sam Kligerman (skligerman)
 
 [#4471](/kb/incidents/4471) says one issue, one fix. The reports say otherwise. We merged them
 on subject line ([decision 0001](/kb/decisions/0001-dedupe-by-subject)), and every one of them
-has a subject about a wrong date, so <Count ticket={4471} of="problems" /> different problems
-went into one ticket. Each now has a ticket of its own.
+has a subject about a wrong date, so <Count ticket={4471} of="problems" /> different problems went
+into one ticket. Each now has a ticket of its own.
 
 <Callout kind="warn">
-The queued parser fix closes <Count ticket={4471} of="parser" /> reports. It does not touch the
-<Count ticket={4471} of="hint" /> from the booking-v3 form or the <Count ticket={4471} of="shift" />
-that moved by one day.
+The queued parser fix is for the <Count ticket={4471} of="parser" /> reports filed under <code>parser</code>.
+It does not touch the <Count ticket={4471} of="hint" /> from the booking-v3 form. And of the
+<code>parser</code> reports, <Count ticket={4471} of="shift" /> moved by one day: the parser fix will
+not close those either.
 </Callout>
 
 ## What #4471 holds
@@ -47,12 +48,14 @@ the reporter's browser, not from the tenant. Look at the tenant, the way in, and
   first. Fixing the parser leaves this one as it is; the form's hint or its reading has to change.
 - **`shift`**: the date moves by one day, or differs between two places: "Client in Lisbon got
   Tuesday. Client in Toronto got Monday." No month swap explains it. The desk had already noted
-  these (desk notes, `oneDayMove`) and still counted them under `parser`.
+  these (desk notes, `oneDayMove`). They stay counted under `parser`, where the desk files them by
+tenant, and they have a ticket of their own.
 
 ## Counting
 
-The export comes in overlapping pages: <Count ticket={4471} of="rows" /> rows hold
-<Count ticket={4471} of="unique" /> reports. Each report is counted once, under one problem.
+The export comes in overlapping pages: <Count ticket={4471} of="rows" /> rows hold only <Count
+ticket={4471} of="unique" /> reports. Each report is counted once under its cause, the way the
+desk's [cause table](/kb/incidents/4471) counts.
 
 ## For the desk
 
