@@ -3,8 +3,8 @@ layout: runbook
 title: '#4471 · three problems, not one'
 owner: skligerman
 status: open
-reviewed: 2026-10-29
-signature: Sam Kligerman (skligerman)
+reviewed: 2026-11-10
+signature: v1.eyJzdWIiOiI2MzU3IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQzMzc2MzgsImV4cCI6MTc5NDQyNDAzOH0.2_x4wtH12MFZKp-DGOhn72bFyUDq2c7pjYTiww5Pbx8
 ---
 
 <script>

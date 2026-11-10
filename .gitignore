@@ -6,3 +6,7 @@ s01e01/*
 !s01e01/.gitkeep
 s01e02/*
 !s01e02/.gitkeep
+.env
+s01e03/challenge-log.md
+s01e03/fresh/
+s01e03/challenge-page.snapshot.txt
