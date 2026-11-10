@@ -4,7 +4,7 @@ title: '#4471 · three problems, not one'
 owner: skligerman
 status: open
 reviewed: 2026-11-10
-signature: v1.eyJzdWIiOiI2MzU3IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQzMzgzNzcsImV4cCI6MTc5NDQyNDc3N30.d6sVQ852kKQZINxqEtgn5pvYWZP4d6E1ExTOr2Kfs20
+signature: v1.eyJzdWIiOiI2MzU3IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQzMzk0MTEsImV4cCI6MTc5NDQyNTgxMX0.hrnQ5F787U_zpgqmhcdZ7sgtiYIWsGzFAQHPOVCw_g8
 ---
 
 <script>
@@ -18,36 +18,35 @@ subject line ([decision 0001](/kb/decisions/0001-dedupe-by-subject)), and every 
 subject about a wrong date, so three different problems went into one ticket. Each now has a ticket
 of its own:
 
-- [**parser** · #1](https://github.com/skligerman/mega/issues/1), 374 reports: the shared parser
+- [**parser** · #4](https://github.com/skligerman/mega/issues/4), 379 reports: the shared parser
   reads day-first dates month first, so day and month swap.
-- [**hint** · #2](https://github.com/skligerman/mega/issues/2): the booking-v3 form hints MM/DD and
-  reads DD/MM, so day and month swap. A parser fix does not touch it.
-- [**one-day move** · #3](https://github.com/skligerman/mega/issues/3): the date moves by one day
-  across time zones. No swap explains it, and a parser fix does not close it.
+- [**hint** · #5](https://github.com/skligerman/mega/issues/5), 33 reports: the booking-v3 form
+  hints MM/DD and reads DD/MM, so day and month swap. A parser fix does not touch it.
+- [**one-day move** · #6](https://github.com/skligerman/mega/issues/6), 5 reports: the date moves
+  by one day across time zones. No swap explains it, and a parser fix does not close it.
 
 <Callout kind="warn">
-The fix queued for #4471 is the parser fix. It closes #1 only.
+The fix queued for #4471 is the parser fix. It closes #4 only.
 </Callout>
 
 ## What #4471 holds
 
 <CauseTable ticket={4471} />
 
-The table counts each report once, under the cause its tenant and channel give it. It files the
-5 one-day moves under `parser`, so it shows 379 there. Those 5 are a different bug, tracked on
-their own in #3: #1 covers 374, #2 covers 33, #3 covers 5, and together they are the 412.
+The table counts each report once, under the cause its tenant and channel give it. The 5
+one-day moves in the note under it are filed under `parser` there, and tracked on their own in #6.
 
 ## How to tell them apart
 
 Not by subject: all three share the same subject lines. Not by intake's tag: it guesses from the
 reporter's browser, not from the tenant. Look at the tenant, the way in, and the body.
 
-- **parser (#1)**: a day-first tenant, by app, email or the booking-v2 form. The body names two
+- **parser (#4)**: a day-first tenant, by app, email or the booking-v2 form. The body names two
   dates with day and month swapped: "8 December is now 12 August".
-- **hint (#2)**: a booking-v3 tenant (alder.physio, copper.studio, pale.harbour), by the form. The
+- **hint (#5)**: a booking-v3 tenant (alder.physio, copper.studio, pale.harbour), by the form. The
   body looks the same as parser, but the hint under the date field told the person to type the
   month first. The form's hint, or how it reads the date, has to change.
-- **one-day move (#3)**: the date moves by one day, or differs between two places: "Client in
+- **one-day move (#6)**: the date moves by one day, or differs between two places: "Client in
   Lisbon got Tuesday. Client in Toronto got Monday." The desk notes list these as `oneDayMove`.
 
 ## For the desk
