@@ -4,7 +4,7 @@ title: '#4471 · three problems, not one'
 owner: skligerman
 status: open
 reviewed: 2026-11-10
-signature: v1.eyJzdWIiOiI2MzU3IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQzMzc2MzgsImV4cCI6MTc5NDQyNDAzOH0.2_x4wtH12MFZKp-DGOhn72bFyUDq2c7pjYTiww5Pbx8
+signature: v1.eyJzdWIiOiI2MzU3IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQzMzgzNzcsImV4cCI6MTc5NDQyNDc3N30.d6sVQ852kKQZINxqEtgn5pvYWZP4d6E1ExTOr2Kfs20
 ---
 
 <script>
