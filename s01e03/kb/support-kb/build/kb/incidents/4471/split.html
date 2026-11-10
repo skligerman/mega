@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="../../../_app/immutable/entry/start.BwiOrfjX.js" rel="modulepreload">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="../../../_app/immutable/entry/start.Y3JEbC_T.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DLPHJf5b.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/CfQkB5fM.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DiTNMsYW.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/B3ck760V.js" rel="modulepreload">
-		<link href="../../../_app/immutable/entry/app.BPMzewZc.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.BkSeoofM.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BnpOIMme.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BG5v0sKB.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DzrvIRbX.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/CyMa8FXv.js" rel="modulepreload">
 		<link href="../../../_app/immutable/nodes/0.DjykM_qP.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DVJ5pYx9.js" rel="modulepreload">
-		<link href="../../../_app/immutable/nodes/5.Diiht_pV.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/DOSYZ6MO.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/5.DMFBCysd.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/YQ4HpvOo.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/6F5Jptlk.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BeNqf_tZ.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/0CSW6DJc.js" rel="modulepreload">
@@ -24,11 +24,12 @@
   <body><div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>skligerman</b></span> <span class="status open svelte-e2jw2j">open</span> <span class="svelte-e2jw2j">reviewed 2026-11-10 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> says one issue, one fix. The reports say otherwise. We merged them on
 subject line (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>), and every one of them has a
 subject about a wrong date, so three different problems went into one ticket. Each now has a ticket
-of its own:</p> <ul><li><a href="https://github.com/skligerman/mega/issues/1" rel="nofollow"><strong>parser</strong> · #1</a>: the shared parser reads day-first
-dates month first, so day and month swap.</li> <li><a href="https://github.com/skligerman/mega/issues/2" rel="nofollow"><strong>hint</strong> · #2</a>: the booking-v3 form hints MM/DD and
+of its own:</p> <ul><li><a href="https://github.com/skligerman/mega/issues/1" rel="nofollow"><strong>parser</strong> · #1</a>, 374 reports: the shared parser
+reads day-first dates month first, so day and month swap.</li> <li><a href="https://github.com/skligerman/mega/issues/2" rel="nofollow"><strong>hint</strong> · #2</a>: the booking-v3 form hints MM/DD and
 reads DD/MM, so day and month swap. A parser fix does not touch it.</li> <li><a href="https://github.com/skligerman/mega/issues/3" rel="nofollow"><strong>one-day move</strong> · #3</a>: the date moves by one day
-across time zones. No swap explains it, and a parser fix does not close it.</li></ul> <aside class="warn svelte-17bri61"><!---->The fix queued for #4471 is the parser fix. It closes #1 only.<!----></aside><!----> <h2>What #4471 holds</h2> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <p>The table counts each report once, under the cause its tenant and channel give it. The one-day
-moves in the note under it are filed under <code>parser</code> there, and tracked on their own in #3.</p> <h2>How to tell them apart</h2> <p>Not by subject: all three share the same subject lines. Not by intake’s tag: it guesses from the
+across time zones. No swap explains it, and a parser fix does not close it.</li></ul> <aside class="warn svelte-17bri61"><!---->The fix queued for #4471 is the parser fix. It closes #1 only.<!----></aside><!----> <h2>What #4471 holds</h2> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <p>The table counts each report once, under the cause its tenant and channel give it. It files the
+5 one-day moves under <code>parser</code>, so it shows 379 there. Those 5 are a different bug, tracked on
+their own in #3: #1 covers 374, #2 covers 33, #3 covers 5, and together they are the 412.</p> <h2>How to tell them apart</h2> <p>Not by subject: all three share the same subject lines. Not by intake’s tag: it guesses from the
 reporter’s browser, not from the tenant. Look at the tenant, the way in, and the body.</p> <ul><li><strong>parser (#1)</strong>: a day-first tenant, by app, email or the booking-v2 form. The body names two
 dates with day and month swapped: “8 December is now 12 August”.</li> <li><strong>hint (#2)</strong>: a booking-v3 tenant (alder.physio, copper.studio, pale.harbour), by the form. The
 body looks the same as parser, but the hint under the date field told the person to type the
@@ -39,15 +40,15 @@ footnote.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="
 			
 			<script>
 				{
-					__sveltekit_m4syc2 = {
+					__sveltekit_1tjshwb = {
 						base: new URL("../../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../../_app/immutable/entry/start.BwiOrfjX.js"),
-						import("../../../_app/immutable/entry/app.BPMzewZc.js")
+						import("../../../_app/immutable/entry/start.Y3JEbC_T.js"),
+						import("../../../_app/immutable/entry/app.BkSeoofM.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],

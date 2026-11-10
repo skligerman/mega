@@ -18,8 +18,8 @@ subject line ([decision 0001](/kb/decisions/0001-dedupe-by-subject)), and every 
 subject about a wrong date, so three different problems went into one ticket. Each now has a ticket
 of its own:
 
-- [**parser** · #1](https://github.com/skligerman/mega/issues/1): the shared parser reads day-first
-  dates month first, so day and month swap.
+- [**parser** · #1](https://github.com/skligerman/mega/issues/1), 374 reports: the shared parser
+  reads day-first dates month first, so day and month swap.
 - [**hint** · #2](https://github.com/skligerman/mega/issues/2): the booking-v3 form hints MM/DD and
   reads DD/MM, so day and month swap. A parser fix does not touch it.
 - [**one-day move** · #3](https://github.com/skligerman/mega/issues/3): the date moves by one day
@@ -33,8 +33,9 @@ The fix queued for #4471 is the parser fix. It closes #1 only.
 
 <CauseTable ticket={4471} />
 
-The table counts each report once, under the cause its tenant and channel give it. The one-day
-moves in the note under it are filed under `parser` there, and tracked on their own in #3.
+The table counts each report once, under the cause its tenant and channel give it. It files the
+5 one-day moves under `parser`, so it shows 379 there. Those 5 are a different bug, tracked on
+their own in #3: #1 covers 374, #2 covers 33, #3 covers 5, and together they are the 412.
 
 ## How to tell them apart
 
