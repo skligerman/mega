@@ -23,7 +23,7 @@ T = {
  "parser": ("shared parser reads day-first dates month first",
   "The shared date parser reads every date month first. Tenants write the day first, so their dates come out with day and month swapped (\"8 December\" becomes \"12 August\").",
   ["Tenant writes dates day first (every tenant on file does).", "Came in by app, email, or the booking-v2 form (not the booking-v3 form, see the hint ticket).", "Body names two dates with day and month swapped."],
-  ["The count is the desk's view (its cause table): it includes the 5 one-day-shift reports, which also have their own ticket.", "This is the fix #4471 already has queued. It does not fix the booking-v3 form hint or the one-day shift.", "Intake's tag comes from the reporter's browser and does not match the cause; use tenant and channel."]),
+  ["The count is the desk's view (its cause table): it includes 5 reports that are one day off instead of swapped.", "This is the fix #4471 already has queued. It does not fix the booking-v3 form hint.", "Intake's tag comes from the reporter's browser and does not match the cause; use tenant and channel."]),
  "hint": ("booking-v3 form hints MM/DD but reads DD/MM",
   "The booking-v3 form prints `MM/DD/YYYY` under its date field. People at day-first tenants type what the hint says, month first, and the form reads it their way. A different bug from the parser: fixing the parser does not fix it.",
   ["Channel is `form`.", "Tenant runs booking-v3 and writes day first: alder.physio, copper.studio, pale.harbour.", "Body names two dates with day and month swapped."],
@@ -35,6 +35,6 @@ T = {
 }
 for k, (title, prob, rec, notes) in T.items():
     rs = g[k]; f, ids = facts(rs)
-    body = f"**Reports covered: {len(rs)}** of the 412 unique reports merged into #4471.\n\n## Problem\n{prob}\n\n## How to recognise it\n" + "".join(f"- {x}\n" for x in rec) + f"- {f}\n\n## Notes\n" + "".join(f"- {x}\n" for x in notes) + "- Counted once per report id: the export holds 427 rows, 412 unique. Parser + hint = 412; the shift reports are also inside parser.\n\n" + f"## Reports (merged into #4471)\n{ids}\n"
-    open(f"{out}/{k}.md", "w").write(f"#4471 split: {title} ({len(rs)} reports)\n\n{body}")
+    body = f"**Reports covered: {len(rs)} unique reports from #4471**\n\n## Problem\n{prob}\n\n## How to recognise it\n" + "".join(f"- {x}\n" for x in rec) + f"- {f}\n\n## Notes\n" + "".join(f"- {x}\n" for x in notes) + "- The count is by unique report id, not raw export rows.\n\n" + f"## Reports (merged into #4471)\n{ids}\n"
+    open(f"{out}/{k}.md", "w").write(f"{title} ({len(rs)} reports)\n\n{body}")
     print(k, len(rs), f)
