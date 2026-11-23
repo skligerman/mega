@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8" /><link href="../../_app/immutable/entry/start.BsZDrjPp.js" rel="modulepreload">
+  <head><meta charset="utf-8" /><link href="../../_app/immutable/entry/start.MR_1uekk.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CKkZzCxc.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/a6ioITI3.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DEkmgckB.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CmpQ3rtu.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/B0XwC4Ot.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/-UyI9lYi.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.BQcyjnDb.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.DUNhucav.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CkBVLFKm.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/ClGkrRbn.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Ci46Vqu8.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BCBJpyds.js" rel="modulepreload">
 		<link href="../../_app/immutable/nodes/0.B6buLryW.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CutBHqXB.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/6.kqsmWDyS.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/CUbL2KBp.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/6.Cqtvm7wF.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/a_bYVcJV.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DgapSwqU.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BbVvDMCc.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/B878Q_Ib.js" rel="modulepreload">
@@ -24,25 +24,27 @@
 		<link href="../../_app/immutable/assets/CauseTable.DuKfINX_.css" rel="stylesheet">
 		<link href="../../_app/immutable/assets/6.CMZ6TBbc.css" rel="stylesheet"></head>
   <body><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 split · three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>skligerman</b></span> <span class="status known svelte-e2jw2j">known</span> <span class="svelte-e2jw2j">reviewed 2026-11-23 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> holds <strong>412 unique reports</strong> (the export has 427 rows; 15 ids
-repeat). They are not one bug. They are three problems with three different fixes.</p> <aside class="warn svelte-17bri61"><!---->The queued fix covers only the first problem. It does not fix the other two.<!----></aside><!----> <h2>The three problems</h2> <table><thead><tr><th>Problem</th><th>Reports</th><th>Ticket</th></tr></thead><tbody><tr><td><strong>parser</strong>: the shared parser reads every date month first, so day-first tenants get flipped dates</td><td>374</td><td><a href="https://github.com/skligerman/mega/issues/7" rel="nofollow">#7</a></td></tr><tr><td><strong>hint</strong>: the booking-v3 form prints <code>MM/DD/YYYY</code>. Day-first people type it, and the form reads it their way</td><td>33</td><td><a href="https://github.com/skligerman/mega/issues/8" rel="nofollow">#8</a></td></tr><tr><td><strong>shift</strong>: the date is one day off, not swapped. Reports point at time zones</td><td>5</td><td><a href="https://github.com/skligerman/mega/issues/9" rel="nofollow">#9</a></td></tr></tbody></table> <p>374 + 33 + 5 = 412. Each report is counted once.</p> <h2>What the desk’s table shows</h2> <p>The table below is computed from the export. It splits by tenant and channel, so it shows <strong>379 parser</strong> and <strong>33 hint</strong>. It files the 5 one-day reports under parser and footnotes them.
-We count them once, in the shift ticket: 379 − 5 = 374.</p> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <h2>How to tell them apart</h2> <ul><li><strong>Do not use intake’s tag.</strong> It comes from the reporter’s browser. It tags 42 reports as <code>hint</code>. Only 33 are.</li> <li><strong>Use the tenant and the channel.</strong> Day-first tenant, form channel, booking-v3 form: hint.
+repeat). They are not one bug. They are three problems with three different fixes. Counts
+are the desk’s own view (its cause table, below).</p> <aside class="warn svelte-17bri61"><!---->The queued fix covers only the first problem. It does not fix the other two.<!----></aside><!----> <h2>The three problems</h2> <table><thead><tr><th>Problem</th><th>Reports</th><th>Ticket</th></tr></thead><tbody><tr><td><strong>parser</strong>: the shared parser reads every date month first, so day-first tenants get flipped dates</td><td>379</td><td><a href="https://github.com/skligerman/mega/issues/7" rel="nofollow">#7</a></td></tr><tr><td><strong>hint</strong>: the booking-v3 form prints <code>MM/DD/YYYY</code>. Day-first people type it, and the form reads it their way</td><td>33</td><td><a href="https://github.com/skligerman/mega/issues/8" rel="nofollow">#8</a></td></tr><tr><td><strong>shift</strong>: the date is one day off, not swapped. Reports point at time zones</td><td>5</td><td><a href="https://github.com/skligerman/mega/issues/9" rel="nofollow">#9</a></td></tr></tbody></table> <p>379 + 33 = 412 unique reports. The 5 shift reports are also inside the parser count, so they
+show in two tickets.</p> <h2>What the desk’s table shows</h2> <p>The table below is computed from the export. It splits by tenant and channel, so it shows <strong>379 parser</strong> and <strong>33 hint</strong>. It files the 5 one-day reports under parser and footnotes them.
+We keep that count for parser, and give the 5 their own ticket too.</p> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <h2>How to tell them apart</h2> <ul><li><strong>Do not use intake’s tag.</strong> It comes from the reporter’s browser. It tags 42 reports as <code>hint</code>. Only 33 are.</li> <li><strong>Use the tenant and the channel.</strong> Day-first tenant, form channel, booking-v3 form: hint.
 Day-first tenant, any other way in: parser.</li> <li><strong>Read the body for a shift.</strong> Swapped day and month: parser or hint. One day off, with no swap:
 shift. The desk’s own <code>oneDayMove</code> note names the 5 reports: R-41202, R-41209, R-41236,
 R-41344, R-41620.</li></ul> <h2>What we are not sure of</h2> <p>The shift cause is a lead, not proven. The reports mention June only, and a client in Lisbon
 who got Tuesday while a client in Toronto got Monday. That looks like time zones. Four other
-vague reports (R-41290, R-41417, R-41514, R-41615) stay in parser.</p> <h2>Lessons</h2> <ul><li>Merging by subject line puts different bugs in one ticket. Read the body before you merge.</li> <li>Count once. A report that fits two causes still goes in one ticket.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-7T0N-XEKP</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+vague reports (R-41290, R-41417, R-41514, R-41615) stay in parser.</p> <h2>Lessons</h2> <ul><li>Merging by subject line puts different bugs in one ticket. Read the body before you merge.</li> <li>Say which count you use. The desk counts by tenant and channel, so a report can sit in two tickets.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-7T0N-XEKP</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_xocm73 = {
+					__sveltekit_4r481j = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.BsZDrjPp.js"),
-						import("../../_app/immutable/entry/app.BQcyjnDb.js")
+						import("../../_app/immutable/entry/start.MR_1uekk.js"),
+						import("../../_app/immutable/entry/app.DUNhucav.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 6],

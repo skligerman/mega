@@ -11,9 +11,9 @@ The date is right but lands one day off, not day/month swapped. Reports mention 
 - Channels: app 2 · email 3. Seen 2026-04-02 → 2026-10-04.
 
 ## Notes
-- The kb's cause table files these under `parser` by tenant and footnotes them. Counted here once, not in the parser ticket.
+- The desk's cause table also counts these 5 under `parser` (by tenant and channel) and footnotes them, so they are in both tickets.
 - Cause is a lead, not proven: the reports point at time zones.
-- Counted once per report id: the export holds 427 rows, 412 unique. The three tickets add up to 412.
+- Counted once per report id: the export holds 427 rows, 412 unique. Parser + hint = 412; the shift reports are also inside parser.
 
 ## Reports (merged into #4471)
 R-41202, R-41209, R-41236, R-41344, R-41620
