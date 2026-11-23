@@ -32,6 +32,15 @@ The queued fix covers only the first problem. It does not fix the second.
 
 379 + 33 = 412 unique reports. Each report is in one ticket.
 
+## How it ended
+
+The desk closed #4471 on 5 October.
+
+| Problem | Outcome | Ticket |
+| --- | --- | --- |
+| parser | **Fixed**: `fix(dates): parse dd/mm for eu locales` | #7, closed |
+| hint | **Won't fix**: the booking-v3 form is retired | #8, closed |
+
 ## What the desk's table shows
 
 The table below is computed from the export. It splits by tenant and channel, so it shows
