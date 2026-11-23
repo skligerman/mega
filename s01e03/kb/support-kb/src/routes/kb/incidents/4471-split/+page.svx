@@ -1,0 +1,64 @@
+---
+layout: runbook
+title: '#4471 split · three problems, not one'
+owner: skligerman
+status: known
+reviewed: 2026-11-23
+signature: v1.eyJzdWIiOiI2MzU3IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTU0NDc2OTgsImV4cCI6MTc5NTUzNDA5OH0.mLcEtijLmh1rFCVTDv_BOU4faGOWaRPHkcCIUdmhFNc
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+
+  const signature = 'v1.eyJzdWIiOiI2MzU3IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTU0NDc2OTgsImV4cCI6MTc5NTUzNDA5OH0.mLcEtijLmh1rFCVTDv_BOU4faGOWaRPHkcCIUdmhFNc';
+</script>
+
+[#4471](/kb/incidents/4471) holds **412 unique reports** (the export has 427 rows; 15 ids
+repeat). They are not one bug. They are three problems with three different fixes.
+
+<Callout kind="warn">
+The queued fix covers only the first problem. It does not fix the other two.
+</Callout>
+
+## The three problems
+
+| Problem | Reports | Ticket |
+| --- | --- | --- |
+| **parser**: the shared parser reads every date month first, so day-first tenants get flipped dates | 374 | [#7](https://github.com/skligerman/mega/issues/7) |
+| **hint**: the booking-v3 form prints `MM/DD/YYYY`. Day-first people type it, and the form reads it their way | 33 | [#8](https://github.com/skligerman/mega/issues/8) |
+| **shift**: the date is one day off, not swapped. Reports point at time zones | 5 | [#9](https://github.com/skligerman/mega/issues/9) |
+
+374 + 33 + 5 = 412. Each report is counted once.
+
+## What the desk's table shows
+
+The table below is computed from the export. It splits by tenant and channel, so it shows
+**379 parser** and **33 hint**. It files the 5 one-day reports under parser and footnotes them.
+We count them once, in the shift ticket: 379 − 5 = 374.
+
+<CauseTable ticket={4471} />
+
+## How to tell them apart
+
+- **Do not use intake's tag.** It comes from the reporter's browser. It tags 42 reports as
+  `hint`. Only 33 are.
+- **Use the tenant and the channel.** Day-first tenant, form channel, booking-v3 form: hint.
+  Day-first tenant, any other way in: parser.
+- **Read the body for a shift.** Swapped day and month: parser or hint. One day off, with no swap:
+  shift. The desk's own `oneDayMove` note names the 5 reports: R-41202, R-41209, R-41236,
+  R-41344, R-41620.
+
+## What we are not sure of
+
+The shift cause is a lead, not proven. The reports mention June only, and a client in Lisbon
+who got Tuesday while a client in Toronto got Monday. That looks like time zones. Four other
+vague reports (R-41290, R-41417, R-41514, R-41615) stay in parser.
+
+## Lessons
+
+- Merging by subject line puts different bugs in one ticket. Read the body before you merge.
+- Count once. A report that fits two causes still goes in one ticket.
+
+<RenderStamp {signature} />

@@ -1,0 +1,1 @@
+import{R as o}from"../chunks/-UyI9lYi.js";import"../chunks/B0XwC4Ot.js";function r(e,t){throw new o(e,t.toString())}const n=()=>r(307,"/kb"),c=Object.freeze(Object.defineProperty({__proto__:null,load:n},Symbol.toStringTag,{value:"Module"}));export{c as universal};
